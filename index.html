@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybertechx Studios | Professional Video Editing</title>
+  <link rel="shortcut icon"type="image"href="cybertechx studios.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+  --primary-blue: #0071e3;
+  --dark-bg: #000000;
+  --darker-bg: #1d1d1f;
+  --card-bg: #1c1c1e;
+  --text-light: #f5f5f7;
+  --text-muted: #86868b;
+  --accent-color: #0071e3;
+  --border-color: #2c2c2e;
+  --hover-blue: #0077ED;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+}
+
+header {
+  background: linear-gradient(135deg, #000000, #1a1a2e);
+  color: var(--text-light);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230071e3" fill-opacity="0.08" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,192C672,181,768,139,864,138.7C960,139,1056,181,1152,186.7C1248,192,1344,160,1392,144L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.015em;
+  background: linear-gradient(135deg, #ffffff, #a1c4fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: var(--text-muted);
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+nav a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.section p {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background: var(--card-bg);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 113, 227, 0.2);
+  border-color: var(--accent-color);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.portfolio-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.portfolio-item {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.portfolio-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 113, 227, 0.2);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: white;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  transform: translateY(0);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.85rem 2.2rem;
+  background: var(--accent-color);
+  color: var(--text-light);
+  border-radius: 980px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(0, 113, 227, 0.3);
+}
+
+.btn:hover {
+  background: var(--hover-blue);
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--accent-color);
+  color: var(--text-light);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 3rem auto 0;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  color: var(--text-light);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* New fade animation keyframes */
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply fade animation to the logo */
+.header-content img {
+  animation: fade 1.5s ease-in-out;
+}
+
+/* Apply fade animation to the header text and navigation links */
+.header-content h1,
+.header-content p,
+nav a {
+  animation: fade 2s ease-in-out;
+  animation-delay: 0.5s;
+}
+
+/* Initial state for elements that fade up on scroll */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When visible, animate to full opacity and at natural position */
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  background: var(--darker-bg);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.social-links {
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 0.8rem;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+.footer-links {
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+
+.footer-links a:hover {
+  color: var(--text-light);
+}
+
+.copyright a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  .section h2 {
+    font-size: 2.2rem;
+  }
+  
+  .section p {
+    font-size: 1.1rem;
+  }
+  
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  .services-grid, .portfolio-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <img src="cybertechx studios.png" alt="Cybertechx Studio Logo" style="max-width:150px; display:block; margin: 0 auto 1rem;">
+      <h1>Cybertechx Studios</h1>
+      <p>Creative video editing at quality prices</p>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section fade-up" id="services">
+    <h2>Our Services</h2>
+    <p>We edit videos with precision, colour grading, and professional style at a price that suits you. Quality work, creative storytelling, and great customer support.</p>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-film"></i>
+        </div>
+        <h3>Video Editing</h3>
+        <p>Professional editing with attention to pacing, storytelling, and visual flow.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3>Color Grading</h3>
+        <p>Enhance the mood and visual appeal of your videos with expert color correction.</p>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-music"></i>
+        </div>
+        <h3>Audio Enhancement</h3>
+        <p>Clean audio, balanced levels, and fitting soundtracks to complement your visuals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="packages">
+  <h2>Our Packages ❤️</h2>
+  <p>Choose the package that best fits your project. Every edit is crafted with care, creativity, and attention to detail.</p>
+  
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-clapperboard"></i></div>
+      <h3>🎞 Mini Pack</h3>
+      <p><strong>LKR 1,500 – 3,000</strong><br>
+      • Up to 1 min (TikTok / Reels / Shorts)<br>
+      • Simple cuts + background music<br>
+      • No revisions</p>
+      <p><em>✨ Quick delivery (1–2 days)<br>
+      Perfect for short social content</em></p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-video"></i></div>
+      <h3>🎬 Basic Pack</h3>
+      <p><strong>LKR 3,000 – 5,000</strong><br>
+      • Up to 3 min<br>
+      • Simple cuts + basic transitions<br>
+      • Background music<br>
+      • 1 revision</p>
+      <p><em>✨ Affordable option for beginners<br>
+      Clean & simple edit</em></p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-film"></i></div>
+      <h3>🎥 Standard Pack</h3>
+      <p><strong>LKR 5,000 Onwards</strong><br>
+      • Up to 5 min<br>
+      • Transitions + text/graphics<br>
+      • Background music + light color correction<br>
+      • 2 revisions</p>
+      <p><em>✨ Polished & professional look<br>
+      Great for YouTube, promos & events</em></p>
+    </div>
+  </div>
+  
+  <div style="text-align:center; margin-top:2rem;">
+    <a class="btn btn-outline" href="#contact">What package are you interested in?</a>
+  </div>
+</section>
+
+
+  <section class="section" id="portfolio">
+    <h2>Portfolio</h2>
+    <p>Check out our latest edits , creative projects and Tech videos on our YouTube channel.</p>
+    
+    <div class="portfolio-showcase">
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Video Editing Sample">
+        <div class="portfolio-overlay">
+          <h3>Video Editing</h3>
+          <p>Professional editing for business presentations</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1574717024757-c1ec4d86ae82?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Video Editing Sample">
+        <div class="portfolio-overlay">
+          <h3>Colorgrading</h3>
+          <p>Creative editing with rhythm and style</p>
+        </div>
+      </div>
+      
+      <div class="portfolio-item">
+        <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Video Editing Sample">
+        <div class="portfolio-overlay">
+          <h3>Travel Vlog</h3>
+          <p>Dynamic editing for engaging content</p>
+        </div>
+      </div>
+    </div>
+    
+    <a class="btn" href="https://www.youtube.com/@Cybertechx-Lk" target="_blank">
+      <i class="fab fa-youtube"></i> Visit YouTube Channel
+    </a>
+  </section>
+  
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Reach out to us for inquiries and bookings. We're here to bring your vision to life.</p>
+    
+    <div class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" placeholder="Your name">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="Your email">
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" class="form-control" placeholder="Tell us about your project"></textarea>
+      </div>
+      
+      <button class="btn">Send Message</button>
+    </div>
+    
+    <p style="margin-top: 2rem;">Or reach us directly on WhatsApp</p>
+    <a class="btn btn-outline" href="https://wa.me/94725345858" target="_blank">
+      <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+    <a class="btn btn-outline" href="mailto:pramudithadenuwan@yahoo.com" target="_blank">
+      <i class="fas fa-mail"></i> Reach us on Email
+    </a>
+  </section>
+
+  <a href="https://wa.me/94725345858" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+
+  <!-- Payment Banner -->
+  <div id="payment-banner" style="
+    display:none;
+    background: linear-gradient(135deg, #ff4d4f, #b30000);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    font-size: 1rem;
+  ">
+    ⚠️ PAYMENT REQUIRED — ACCESS DENIED ⚠️
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://www.youtube.com/@Cybertechx-Lk"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@cybertechx_lk"><i class="fab fa-tiktok"></i></a>
+        <a href="https://globbook.com/P_D_P"><i class="fas fa-globe"></i></a>
+        <a href="https://www.linkedin.com/in/cybetechx-lk-10a71b37b/"><i class="fab fa-linkedin"></i></a>
+      </div>
+      
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <div class="copyright">
+        <div class="copyright-links"></div>
+        &copy; 2026 Cybertechx Studios. All rights reserved. Powerd By <a href="https://globbook.com">Globbook</a> & <a href="https://pix-studios.vercel.app/">Pix Studios Sri Lanka</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+<script>
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyCGU42VW6Y_t7QEVKc9UMNWndTrvsXD3ao",
+    authDomain: "paymentstatus-864be.firebaseapp.com",
+    databaseURL: "https://paymentstatus-864be-default-rtdb.firebaseio.com",
+    projectId: "paymentstatus-864be",
+    storageBucket: "paymentstatus-864be.firebasestorage.app",
+    messagingSenderId: "545311646631",
+    appId: "1:545311646631:web:6deed98bb0f6b0df8ccc82",
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  // Reference to your value in Firebase
+  const paymentRef = db.ref("paymentStatus/paymentCleared");
+
+  paymentRef.on("value", (snapshot) => {
+    const cleared = snapshot.val();
+    let banner = document.getElementById("payment-banner");
+
+    if (cleared === true || cleared === "true") {
+        // Payment cleared: hide banner
+        if (banner) {
+            banner.style.display = "none";
+            document.body.style.pointerEvents = "auto";
+        }
+    } else {
+        // Payment not cleared: show banner
+        if (banner) {
+          banner.style.display = "flex";  // show the existing banner
+          Object.assign(banner.style, {
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+            background: "linear-gradient(135deg, #ff0000, #4b0000)",
+            color: "white",
+            fontSize: "1.5rem",
+            fontWeight: "700",
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: "99999",
+            textShadow: "0 0 25px black",
+            letterSpacing: "1px"
+          });
+          banner.innerHTML = `⚠️ PAYMENT REQUIRED — ACCESS DENIED ⚠️<br><span style="font-size:1rem;">Contact admin to unlock</span>`;
+          document.body.style.pointerEvents = "none";
+        } else {
+          banner = document.createElement("div");
+          banner.id = "payment-banner";
+          Object.assign(banner.style, {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "linear-gradient(135deg, #ff0000, #4b0000)",
+            color: "white",
+            textAlign: "center",
+            padding: "2rem",
+            fontWeight: "700",
+            fontSize: "1.5rem",
+            letterSpacing: "1px",
+            position: "fixed",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+            zIndex: "99999",
+            textShadow: "0 0 20px black"
+          });
+          banner.innerHTML = `⚠️ PAYMENT REQUIRED — ACCESS DENIED ⚠️<br><span style="font-size:1rem;">Contact admin to unlock</span>`;
+          document.body.appendChild(banner);
+          document.body.style.pointerEvents = "none";
+        }
+      }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeUpElements = document.querySelectorAll('.fade-up');
+    const options = {
+      threshold: 0.2
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+    
+    fadeUpElements.forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script>
+
+</body>
+</html>
